@@ -1,19 +1,10 @@
-<!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/340354634/23.1.3%2B)
-[![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T1129779)
-[![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
-<!-- default badges end -->
-# DevExtreme Examples Template
+# FileManager for DevExtreme - Azure Server-Side Binding
 
-This is the repository template for creating new examples. 
+This example illustrates how to configure the FileManager to manage files and folders in Microsoft Azure Blob Storage. To access the Azure Blob Storage, the component uses the [Remote File System Provider](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxFileManager/File_System_Providers/Remote/).
 
-Use **_Product_ for DevExtreme - _Task_** template for a title. 
+![FileManager](/file-manager-server-side-binding.png)
 
-Describe the solved task in this section.
-
-Put a screenshot/gif that illustrates the result here.
-
-Then, add implementation details (steps, code snippets, and other technical information in a free form), or add a link to an existing document with implementation details. 
+This file system provider allows you to access the storage's file system on the client side. To process the HTTP requests on the server, create your own file system provider that implements the [IFileSystemItemLoader](https://docs.devexpress.com/AspNetCore/DevExtreme.AspNet.Mvc.FileManagement.IFileSystemItemLoader), [IFileSystemItemEditor](https://docs.devexpress.com/AspNetCore/DevExtreme.AspNet.Mvc.FileManagement.IFileSystemItemEditor), [IFileUploader](https://docs.devexpress.com/AspNetCore/DevExtreme.AspNet.Mvc.FileManagement.IFileUploader) and [IFileContentProvider](https://docs.devexpress.com/AspNetCore/DevExtreme.AspNet.Mvc.FileManagement.IFileContentProvider) interfaces.
 
 ## Files to Review
 
@@ -31,12 +22,10 @@ Then, add implementation details (steps, code snippets, and other technical info
 
 ## Documentation
 
-- link
-- link
-- ...
+- [Getting Started with FileManager](https://js.devexpress.com/Angular/Documentation/Guide/UI_Components/FileManager/Getting_Started_with_File_Manager/)
+- [Bind FileManager to File Systems](https://js.devexpress.com/Angular/Documentation/Guide/UI_Components/FileManager/Bind_to_File_Systems/)
 
 ## More Examples
 
-- link
-- link
-- ...
+- [FileManager for DevExtreme - Azure Client-Side Binding](https://github.com/DevExpress-Examples/devextreme-file-manager-azure-client-side-binding)
+- [FileUploader for DevExtreme - Direct Upload to Azure](https://github.com/DevExpress-Examples/devextreme-file-uploader-direct-upload-to-azure)
