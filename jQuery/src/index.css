@@ -2,3 +2,15 @@
     margin: 50px;
     width: 90vh;
 }
+
+#wrapper #file-manager {
+    visibility: hidden;
+}
+
+#wrapper.show-widget #file-manager {
+    visibility: visible;
+}
+
+#wrapper.show-message #file-manager {
+    display: none;
+}

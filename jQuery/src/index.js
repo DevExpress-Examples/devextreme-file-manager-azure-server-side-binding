@@ -1,10 +1,34 @@
 $(() => {
-  let count = 0;
-  $('#btn').dxButton({
-    text: `Click count: ${count}`,
-    onClick(e) {
-      count += 1;
-      e.component.option('text', `Click count: ${count}`);
+  const loadPanel = $('#load-panel').dxLoadPanel({
+    position: { of: '#file-manager' },
+  }).dxLoadPanel('instance');
+
+  $.ajax({
+    url: 'https://js.devexpress.com/Demos/Mvc/api/file-manager-azure-status?widgetType=fileManager',
+    success(result) {
+      const className = result.active ? 'show-widget' : 'show-message';
+      $('#wrapper').addClass(className);
+      loadPanel.hide();
     },
+  });
+
+  const provider = new DevExpress.fileManagement.RemoteFileSystemProvider({
+    endpointUrl: 'https://localhost:7049/api/file-manager-azure',
+  });
+
+  $('#file-manager').dxFileManager({
+    name: 'fileManager',
+    fileSystemProvider: provider,
+    permissions: {
+      download: true,
+      // uncomment the code below to enable file/directory management
+      /* create: true,
+            copy: true,
+            move: true,
+            delete: true,
+            rename: true,
+            upload: true */
+    },
+    allowedFileExtensions: [],
   });
 });
