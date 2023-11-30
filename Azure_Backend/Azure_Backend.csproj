@@ -7,15 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="AzureStorageAccount.cs" />
-    <Compile Remove="Models\FileManagement\DBFileProvider.cs" />
-    <Compile Remove="Models\FileManagement\FileItem.cs" />
-    <Compile Remove="Models\FileManagement\FileManagementDbContext.cs" />
-    <Compile Remove="Models\FileManagement\InMemoryFileManagementDataContext.cs" />
-    <Compile Remove="Models\FileManagement\User.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Azure.Storage.Blobs" Version="12.19.1" />
     <PackageReference Include="DevExtreme.AspNet.Core" Version="23.1.6" />
     <PackageReference Include="DevExtreme.AspNet.Data" Version="3.0.0" />

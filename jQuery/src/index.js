@@ -1,10 +1,12 @@
 $(() => {
+  const baseUrl = 'https://localhost:7049/api/';
+
   const loadPanel = $('#load-panel').dxLoadPanel({
     position: { of: '#file-manager' },
   }).dxLoadPanel('instance');
 
   $.ajax({
-    url: 'https://js.devexpress.com/Demos/Mvc/api/file-manager-azure-status?widgetType=fileManager',
+    url: `${baseUrl}file-manager-azure-status?widgetType=fileManager`,
     success(result) {
       const className = result.active ? 'show-widget' : 'show-message';
       $('#wrapper').addClass(className);
@@ -13,7 +15,7 @@ $(() => {
   });
 
   const provider = new DevExpress.fileManagement.RemoteFileSystemProvider({
-    endpointUrl: 'https://localhost:7049/api/file-manager-azure',
+    endpointUrl: `${baseUrl}file-manager-azure`,
   });
 
   $('#file-manager').dxFileManager({
