@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { DxButtonModule } from 'devextreme-angular/ui/button';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { DxFileManagerModule, DxLoadPanelModule } from 'devextreme-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -11,7 +12,9 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DxButtonModule,
+    DxFileManagerModule,
+    DxLoadPanelModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

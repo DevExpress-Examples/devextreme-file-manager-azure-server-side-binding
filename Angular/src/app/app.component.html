@@ -1,3 +1,27 @@
-<div class="default-style">
-  <dx-button [text]="buttonText" (onClick)="onClick($event)"></dx-button>
+<div id="wrapper" [class]="wrapperClassName">
+  <dx-load-panel
+    [position]="{ of: '#file-manager' }"
+    [(visible)]="loadPanelVisible"
+  >
+  </dx-load-panel>
+  <dx-file-manager
+    id="file-manager"
+    [fileSystemProvider]="fileSystemProvider"
+    [allowedFileExtensions]="allowedFileExtensions"
+  >
+    <!-- uncomment the code below to enable file/directory management -->
+    <!-- <dxo-permissions 
+            [create]="true"
+            [copy]="true"
+            [move]="true"
+            [delete]="true"
+            [rename]="true"
+            [upload]="true"
+            [download]="true">
+        </dxo-permissions> -->
+  </dx-file-manager>
+  <div id="message-box">
+    To run the demo, specify your Azure storage account name, access key and
+    container name in the <strong>appsettings.json</strong> file.
+  </div>
 </div>

@@ -1,20 +1,50 @@
 import { Component } from '@angular/core';
-import { ClickEvent } from 'devextreme/ui/button';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { lastValueFrom } from 'rxjs';
+import RemoteFileSystemProvider from 'devextreme/file_management/remote_provider';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  preserveWhitespaces: true,
 })
 export class AppComponent {
-  title = 'Angular';
+  allowedFileExtensions: string[];
 
-  counter = 0;
+  fileSystemProvider: RemoteFileSystemProvider;
 
-  buttonText = 'Click count: 0';
+  wrapperClassName: string;
 
-  onClick(e: ClickEvent): void {
-    this.counter++;
-    this.buttonText = `Click count: ${this.counter}`;
+  loadPanelVisible: boolean;
+
+  baseUrl = 'https://localhost:7049/api/';
+
+  constructor(http: HttpClient) {
+    this.allowedFileExtensions = [];
+    this.fileSystemProvider = new RemoteFileSystemProvider({
+      endpointUrl: `${this.baseUrl}file-manager-azure`,
+    });
+
+    this.wrapperClassName = '';
+    this.loadPanelVisible = true;
+
+    this.checkAzureStatus(http);
+  }
+
+  checkAzureStatus(http: HttpClient): void {
+    const observable = http.get<{ active: boolean }>(`${this.baseUrl}file-manager-azure-status?widgetType=fileManager`);
+    const promise = lastValueFrom(observable);
+
+    promise
+      .then((response) => {
+        this.wrapperClassName = response.active ? 'show-widget' : 'show-message';
+        this.loadPanelVisible = false;
+      })
+      .catch((error) => {
+        /* eslint-disable no-console */
+        console.error('Error occurred:', error);
+        /* eslint-enable no-console */
+      });
   }
 }
