@@ -4,13 +4,17 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
-# FileManager for DevExtreme - Azure Server-Side Binding
+# DevExtreme File Manager - Azure Server-Side Binding
 
-This example illustrates how to configure the FileManager to manage files and folders in Microsoft Azure Blob Storage. To access the Azure Blob Storage, the component uses the [Remote File System Provider](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxFileManager/File_System_Providers/Remote/).
+This example configures the DevExtreme FileManager to manage files/folders stored within Microsoft Azure Blob Storage. To access Azure Blob Storage, the component uses the [Remote File System Provider](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxFileManager/File_System_Providers/Remote/).
+
+**IMPORTANT**
+
+The code snippets in this repository are for informational purposes only. Security should be your #1 priority when using Azure Blob storage. You should consult a security expert or apply accepted best practices to maintain the highest security posture for your DevExtreme-powered web application. Remember, a secure web app demands careful consideration/understanding of potential attack vectors, the configuration of your development environment, and security posture of third-party service providers.
 
 ![FileManager](/file-manager-server-side-binding.png)
 
-This file system provider allows you to access the storage's file system on the client side. To process the HTTP requests on the server, create your own file system provider that implements the [IFileSystemItemLoader](https://docs.devexpress.com/AspNetCore/DevExtreme.AspNet.Mvc.FileManagement.IFileSystemItemLoader), [IFileSystemItemEditor](https://docs.devexpress.com/AspNetCore/DevExtreme.AspNet.Mvc.FileManagement.IFileSystemItemEditor), [IFileUploader](https://docs.devexpress.com/AspNetCore/DevExtreme.AspNet.Mvc.FileManagement.IFileUploader) and [IFileContentProvider](https://docs.devexpress.com/AspNetCore/DevExtreme.AspNet.Mvc.FileManagement.IFileContentProvider) interfaces.
+This file system provider allows you to access the storage file system on the client side. To process the HTTP requests on the server, create a custom file system provider that implements the [IFileSystemItemLoader](https://docs.devexpress.com/AspNetCore/DevExtreme.AspNet.Mvc.FileManagement.IFileSystemItemLoader), [IFileSystemItemEditor](https://docs.devexpress.com/AspNetCore/DevExtreme.AspNet.Mvc.FileManagement.IFileSystemItemEditor), [IFileUploader](https://docs.devexpress.com/AspNetCore/DevExtreme.AspNet.Mvc.FileManagement.IFileUploader), and [IFileContentProvider](https://docs.devexpress.com/AspNetCore/DevExtreme.AspNet.Mvc.FileManagement.IFileContentProvider) interfaces.
 
 ## Files to Review
 
