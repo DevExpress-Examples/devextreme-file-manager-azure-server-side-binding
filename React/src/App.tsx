@@ -1,10 +1,10 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 import FileManager, { Permissions } from 'devextreme-react/file-manager';
 import RemoteFileSystemProvider from 'devextreme/file_management/remote_provider';
 import { LoadPanel } from 'devextreme-react/load-panel';
 import './App.css';
 import 'devextreme/dist/css/dx.material.blue.light.compact.css';
-import { PositionConfig } from 'devextreme/animation/position';
+import type { PositionConfig } from 'devextreme/animation/position';
 
 const baseUrl = 'https://localhost:7049/api/';
 const fileSystemProvider = new RemoteFileSystemProvider({
