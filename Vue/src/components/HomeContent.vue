@@ -5,7 +5,7 @@ import 'devextreme/dist/css/dx.material.blue.light.compact.css';
 import { DxFileManager, DxPermissions } from 'devextreme-vue/file-manager';
 import RemoteFileSystemProvider from 'devextreme/file_management/remote_provider';
 import { DxLoadPanel } from 'devextreme-vue/load-panel';
-import { onMounted, type HtmlHTMLAttributes, ref } from 'vue';
+import { onMounted, ref } from 'vue';
 
 const baseUrl = 'https://localhost:7049/api/';
 
@@ -16,7 +16,7 @@ const fileSystemProvider = new RemoteFileSystemProvider({
 const allowedFileExtensions = ref<string[]>([]);
 const loadPanelPosition = { of: '#file-manager' };
 const loadPanelVisible = ref(true);
-const wrapperClassName = ref<HtmlHTMLAttributes['class']>('');
+const wrapperClassName = ref('');
 
 onMounted(() => {
   fetch(`${baseUrl}file-manager-azure-status?widgetType=fileManager`)
