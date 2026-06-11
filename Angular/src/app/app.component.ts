@@ -44,7 +44,6 @@ export class AppComponent {
         this.loadPanelVisible = false;
       })
       .catch((error) => {
-        /* eslint-disable no-console */
         console.error('Error occurred:', error);
         /* eslint-enable no-console */
       });

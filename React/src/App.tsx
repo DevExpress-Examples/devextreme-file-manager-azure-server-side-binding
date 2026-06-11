@@ -31,7 +31,6 @@ function App(): JSX.Element {
         setLoadPanelVisible(false);
       })
       .catch((error) => {
-        /* eslint-disable no-console */
         console.error('Error fetching Azure status:', error);
         /* eslint-enable no-console */
       });
