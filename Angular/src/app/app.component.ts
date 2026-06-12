@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
 import RemoteFileSystemProvider from 'devextreme/file_management/remote_provider';
@@ -9,6 +9,7 @@ import { DxFileManagerModule, DxLoadPanelModule } from 'devextreme-angular';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   preserveWhitespaces: true,
 })
 export class AppComponent {
